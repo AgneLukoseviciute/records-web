@@ -2,7 +2,7 @@ package com.lukoseviciute.programming.util;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.lukoseviciute.appLogic.models.Athlete;
+import com.lukoseviciute.programming.models.Athlete;
 
 import java.io.File;
 import java.io.FileReader;

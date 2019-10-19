@@ -1,6 +1,6 @@
 package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.appLogic.models.Mismatch;
+import com.lukoseviciute.programming.models.Mismatch;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.appLogic.models.Athlete;
-import com.lukoseviciute.appLogic.models.Mismatch;
+import com.lukoseviciute.programming.models.Athlete;
+import com.lukoseviciute.programming.models.Mismatch;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

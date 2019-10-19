@@ -1,6 +1,6 @@
 package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.appLogic.models.Athlete;
+import com.lukoseviciute.programming.models.Athlete;
 
 import java.io.BufferedReader;
 import java.io.File;

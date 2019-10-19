@@ -1,7 +1,7 @@
 package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.appLogic.models.Athlete;
-import com.lukoseviciute.appLogic.models.XMLRoot;
+import com.lukoseviciute.programming.models.Athlete;
+import com.lukoseviciute.programming.models.XMLRoot;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
