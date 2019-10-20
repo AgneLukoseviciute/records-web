@@ -1,4 +1,4 @@
-package com.lukoseviciute.programming.models;
+package com.lukoseviciute.programming.util.models;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

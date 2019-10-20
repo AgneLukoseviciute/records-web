@@ -1,8 +1,7 @@
-package com.lukoseviciute.programming;
+package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.programming.util.CompareAll;
-import com.lukoseviciute.programming.util.PrintDifferences;
-import com.lukoseviciute.programming.util.CompareAll;
+import util.CompareAll;
+import util.PrintDifferences;
 
 public class Main{
 
