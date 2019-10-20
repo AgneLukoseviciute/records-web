@@ -1,8 +1,5 @@
 package com.lukoseviciute.programming.util;
 
-import util.CompareAll;
-import util.PrintDifferences;
-
 public class Main{
 
     public static void main(String[] args) {

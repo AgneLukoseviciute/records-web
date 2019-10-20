@@ -1,6 +1,6 @@
-package util;
+package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.programming.util.models.Mismatch;
+import com.lukoseviciute.programming.models.Mismatch;
 
 import java.util.List;
 

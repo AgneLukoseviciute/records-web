@@ -1,4 +1,4 @@
-package util;
+package com.lukoseviciute.programming.util;
 
 import java.io.IOException;
 import java.sql.Connection;

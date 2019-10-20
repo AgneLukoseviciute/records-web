@@ -1,6 +1,6 @@
-package util;
+package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.programming.util.models.Athlete;
+import com.lukoseviciute.programming.models.Athlete;
 
 import java.io.IOException;
 import java.sql.Connection;

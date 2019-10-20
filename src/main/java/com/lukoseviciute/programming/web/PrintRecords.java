@@ -1,4 +1,4 @@
-package com.lukoseviciute.web;
+package com.lukoseviciute.programming.web;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

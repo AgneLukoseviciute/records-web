@@ -1,10 +1,9 @@
 package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.programming.util.models.Athlete;
-import com.lukoseviciute.programming.util.models.Mismatch;
+import com.lukoseviciute.programming.models.Athlete;
+import com.lukoseviciute.programming.models.Mismatch;
 import org.junit.Assert;
 import org.junit.Test;
-import util.CompareHelper;
 
 import java.util.Arrays;
 import java.util.List;

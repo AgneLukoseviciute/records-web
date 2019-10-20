@@ -1,9 +1,8 @@
 package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.programming.util.models.Athlete;
+import com.lukoseviciute.programming.models.Athlete;
 import org.junit.Assert;
 import org.junit.Test;
-import util.CSVFileReader;
 
 import java.util.List;
 

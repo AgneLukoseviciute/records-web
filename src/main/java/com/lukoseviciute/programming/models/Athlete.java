@@ -1,4 +1,4 @@
-package com.lukoseviciute.programming.util.models;
+package com.lukoseviciute.programming.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

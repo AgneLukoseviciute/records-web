@@ -1,4 +1,4 @@
-package com.lukoseviciute.programming.util.models;
+package com.lukoseviciute.programming.models;
 
 public class Mismatch {
 

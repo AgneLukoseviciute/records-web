@@ -1,6 +1,6 @@
-package util;
+package com.lukoseviciute.programming.util;
 
-import com.lukoseviciute.programming.util.models.Athlete;
+import com.lukoseviciute.programming.models.Athlete;
 
 import java.sql.SQLException;
 import java.util.List;
