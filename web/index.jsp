@@ -17,7 +17,7 @@
 %>
 <h1>Welcome </h1>
 <h2> Click to see records.</h2>
-<form action = "PrintRecords" method = "post">
+<form action = "/records_web_war_exploded/records" method = "post">
   <input type ="submit" style="color:green;" value = "rekordai" >
 </form>
 </body>
