@@ -8,7 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -16,12 +18,14 @@ import java.util.List;
 public class PrintRecords extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        CSVFileReader csvRead = new CSVFileReader();
-        List<Athlete> csvAthleteList;
-        csvAthleteList = csvRead.intoObjects("assets/records.csv");
-        out.println("csv stuff: "+ csvAthleteList.get(0).getName());
         out.println("executing doPostupdate");
+        CSVFileReader csvRead = new CSVFileReader();
+       // List<Athlete> csvAthleteList;
+       // csvAthleteList = csvRead.intoObjects("assets/records.csv");
 
+
+        List<Athlete> athletes = csvRead.intoObjects(new BufferedReader(new InputStreamReader(getServletContext().getResourceAsStream("/WEB-INF/records.csv"))));
+        out.println("csv stuff: "+ athletes.get(0).getName());
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.lukoseviciute.programming.models.Athlete;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +16,7 @@ public class JSONFileReader implements FileReaderI {
 
     }
 
-    @Override
+   // @Override
     public List<Athlete> intoObjects(String fileStr) {
         Gson gson = new Gson();
         File jsonFile = new File (fileStr);
@@ -42,4 +39,8 @@ public class JSONFileReader implements FileReaderI {
     }
 
 
+    @Override
+    public List<Athlete> intoObjects(BufferedReader reader) {
+        return null;
+    }
 }

@@ -6,6 +6,7 @@ import com.lukoseviciute.programming.models.XMLRoot;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
+import java.io.BufferedReader;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class XMLFileReader implements FileReaderI {
 
     }
 
-    @Override
+   // @Override
     public List<Athlete> intoObjects(String xmlStr){
         File xmlFile = new File(xmlStr);
 
@@ -37,4 +38,8 @@ public class XMLFileReader implements FileReaderI {
         return xmlAthleteList;
     }
 
+    @Override
+    public List<Athlete> intoObjects(BufferedReader reader) {
+        return null;
+    }
 }

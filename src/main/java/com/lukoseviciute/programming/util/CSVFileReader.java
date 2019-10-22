@@ -18,12 +18,12 @@ public class CSVFileReader implements FileReaderI{
     }
 
     @Override
-    public List<Athlete> intoObjects(String fileStr) {
-        File csvFile = new File (fileStr);
-        BufferedReader csvReader;
+    public List<Athlete> intoObjects(BufferedReader csvReader) {
+        //File csvFile = new File (fileStr);
+       // BufferedReader csvReader;
 
         try {
-            csvReader = new BufferedReader(new FileReader(csvFile));
+            //csvReader = new BufferedReader(new FileReader(csvFile));
 
             //skips first line - column names
             csvReader.readLine();

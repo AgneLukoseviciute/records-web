@@ -27,7 +27,7 @@ public class CompareAll {
         xmlRead = new XMLFileReader();
 
         if (builder.csvFile != null){
-            csvAthleteList = csvRead.intoObjects(builder.csvFile);
+          //  csvAthleteList = csvRead.intoObjects(builder.csvFile);
         }
         if (builder.jsonFile != null){
             jsonAthleteList = jsonRead.intoObjects(builder.jsonFile);
