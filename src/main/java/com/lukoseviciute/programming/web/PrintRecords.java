@@ -12,24 +12,26 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 @WebServlet(name = "PrintRecords")
 public class PrintRecords extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        out.println("executing doPostupdate");
         CSVFileReader csvRead = new CSVFileReader();
-       // List<Athlete> csvAthleteList;
-       // csvAthleteList = csvRead.intoObjects("assets/records.csv");
-
 
         List<Athlete> athletes = csvRead.intoObjects(new BufferedReader(new InputStreamReader(getServletContext().getResourceAsStream("/WEB-INF/records.csv"))));
-        out.println("csv stuff: "+ athletes.get(0).getName());
+        for(Athlete athlete: athletes){
+            out.print(athlete.getRank() + " ");
+            out.print(athlete.getName() + " ");
+            out.print(athlete.getLocation() + " ");
+            out.print(athlete.getDate() + " ");
+            out.println(athlete.getMark() + " ");
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        PrintWriter out = response.getWriter();
-        out.println("executing doGet");
     }
 }
