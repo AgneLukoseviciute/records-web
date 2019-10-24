@@ -10,7 +10,17 @@
 
     <servlet-mapping>
         <servlet-name>PrintRecords</servlet-name>
-        <url-pattern>/records</url-pattern>
+        <url-pattern>/csvrecords</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PrintFromDB</servlet-name>
+        <servlet-class>com.lukoseviciute.programming.web.PrintFromDB</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PrintFromDB</servlet-name>
+        <url-pattern>/dbrecords</url-pattern>
     </servlet-mapping>
 
 

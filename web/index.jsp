@@ -17,8 +17,11 @@
 %>
 <h1>Welcome </h1>
 <h2> Click to see records.</h2>
-<form action = "/records_web_war_exploded/records" method = "post">
-  <input type ="submit" style="color:green;" value = "rekordai" >
+<form action = "/records_web_war_exploded/csvrecords" method = "post">
+  <input type ="submit" style="color:green;" value = "CSV records" >
+</form>
+<form action = "/records_web_war_exploded/dbrecords" method = "post">
+  <input type ="submit" style="color:green;" value = "DB records" >
 </form>
 </body>
 </html>

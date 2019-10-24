@@ -12,6 +12,7 @@ public final class GetDBConnection {
     private GetDBConnection() {}
 
     public static GetDBConnection getInstance() {
+
         if (instance == null) {
             instance = new GetDBConnection();
         }
