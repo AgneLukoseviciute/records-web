@@ -1,5 +1,7 @@
 package com.lukoseviciute.programming.util;
 
+import com.mysql.cj.jdbc.MysqlDataSource;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,9 +31,12 @@ public final class GetDBConnection {
         String url = "jdbc:mysql://localhost:3306/athletes1?useTimezone=true&serverTimezone=UTC";
         String username = properties.getUserName();
         String password = properties.getPassword();
-        Connection conn = DriverManager.getConnection(url, username, password);
 
-        return conn;
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setURL(url);
+        dataSource.setUser(username);
+        dataSource.setPassword(password);
+        return dataSource.getConnection();
 
     }
 
