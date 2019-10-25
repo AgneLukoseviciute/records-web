@@ -9,8 +9,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
+
+import static java.util.logging.Level.INFO;
 
 public class AthleteDaoImpl implements AthleteDao {
+
+    private static Logger logger = Logger.getLogger(AthleteDaoImpl.class.getName());
 
     List<Athlete> athletes;
 
@@ -24,22 +29,25 @@ public class AthleteDaoImpl implements AthleteDao {
 
         try {
             conn = GetDBConnection.getInstance().getConnection();
-        } catch (IOException e) {
+        } catch (IOException  e) {
             e.printStackTrace();
         }
         Statement statement = conn.createStatement();
-        ResultSet resultSet = statement.executeQuery("select * from hammer_women");
+        String sqlStr = "select * from athletes1.hammer_women";
+        ResultSet resultSet = statement.executeQuery(sqlStr);
 
         List<Athlete> athletes = new ArrayList<>();
 
         while (resultSet.next()){
-            int rank = resultSet.getInt(2);
-            String mark = resultSet.getString(3);
-            String name = resultSet.getString(4);
-            String date = resultSet.getString(5);
-            String location = resultSet.getString(6);
+//            int rank = resultSet.getInt(2);
+//            String mark = resultSet.getString(3);
+            String name = resultSet.getString("athlete_name");
+            logger.log(INFO, "athlete_name: " + name) ;
 
-            athletes.add(new Athlete(rank, mark, name, date, location));
+//            String date = resultSet.getString(5);
+//            String location = resultSet.getString(6);
+
+//            athletes.add(new Athlete(rank, mark, name, date, location));
         }
 
         resultSet.close();
