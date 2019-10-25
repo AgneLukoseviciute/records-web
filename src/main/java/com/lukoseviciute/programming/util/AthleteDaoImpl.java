@@ -39,15 +39,15 @@ public class AthleteDaoImpl implements AthleteDao {
         List<Athlete> athletes = new ArrayList<>();
 
         while (resultSet.next()){
-//            int rank = resultSet.getInt(2);
-//            String mark = resultSet.getString(3);
+            int rank = resultSet.getInt(2);
+            String mark = resultSet.getString(3);
             String name = resultSet.getString("athlete_name");
-            logger.log(INFO, "athlete_name: " + name) ;
+          //  logger.log(INFO, "athlete_name: " + name) ;
 
-//            String date = resultSet.getString(5);
-//            String location = resultSet.getString(6);
+            String date = resultSet.getString(5);
+            String location = resultSet.getString(6);
 
-//            athletes.add(new Athlete(rank, mark, name, date, location));
+            athletes.add(new Athlete(rank, mark, name, date, location));
         }
 
         resultSet.close();

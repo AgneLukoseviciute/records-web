@@ -19,7 +19,6 @@ public class PrintFromDB extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         List<Athlete> dbAthletes;
-        out.println("executing post");
 
         AthleteDaoImpl dbInfo = new AthleteDaoImpl();
         try {
