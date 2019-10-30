@@ -11,9 +11,9 @@ public interface AthleteDao {
 
     public void insertAthlete(Athlete athlete) throws SQLException;
 
-    public Athlete selectAthlete(int id);
+    public Athlete selectAthlete(String name);
 
-    public boolean deleteAthlete(int id) throws SQLException;
+    public boolean deleteAthlete(String name) throws SQLException;
 
     public boolean updateAthlete(Athlete athlete) throws SQLException;
 

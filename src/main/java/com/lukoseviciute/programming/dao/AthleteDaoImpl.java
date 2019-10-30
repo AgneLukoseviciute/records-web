@@ -2,7 +2,6 @@ package com.lukoseviciute.programming.dao;
 
 import com.lukoseviciute.programming.models.Athlete;
 import com.lukoseviciute.programming.util.GetDBConnection;
-import com.sun.xml.bind.v2.TODO;
 
 import java.io.IOException;
 import java.sql.*;
@@ -12,11 +11,19 @@ import java.util.logging.Logger;
 
 public class AthleteDaoImpl implements AthleteDao {
 
-    //TODO: remove?
     private static Logger logger = Logger.getLogger(AthleteDaoImpl.class.getName());
 
-    private static final String INSERT_USERS_SQL = "INSERT INTO hammer_women " +
+    private static final String INSERT_USERS_SQL = "INSERT INTO athletes1.hammer_women " +
         "(rank, mark, athlete_name, date, location) VALUES (?, ?, ?, ?, ?);";
+
+    private static final String SELECT_ATHLETE_BY_NAME = "select rank, mark, date, location " +
+            "from athletes1.hammer_women where athlete_name =?";
+
+    private static final String SELECT_ALL_ATHLETES = "select * from athletes1.hammer_women";
+    private static final String DELETE_ATHLETE_SQL = "delete from athletes1.hammer_women where athlete_name = ?;";
+    private static final String UPDATE_ATHLETE_SQL = "update athletes1.hammer_women " +
+            "set rank = ?, mark = ?, date = ?, location = ? where athlete_name = ?;";
+
 
     List<Athlete> athletes;
 
@@ -30,12 +37,14 @@ public class AthleteDaoImpl implements AthleteDao {
 
         try {
             conn = GetDBConnection.getInstance().getConnection();
-        } catch (IOException  e) {
+        } catch (SQLException e) {
+            printSQLException(e);
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
         Statement statement = conn.createStatement();
-        String sqlStr = "select * from athletes1.hammer_women";
-        ResultSet resultSet = statement.executeQuery(sqlStr);
+        ResultSet resultSet = statement.executeQuery(SELECT_ALL_ATHLETES);
 
         List<Athlete> athletes = new ArrayList<>();
 
@@ -58,7 +67,9 @@ public class AthleteDaoImpl implements AthleteDao {
     @Override
     public void insertAthlete(Athlete athlete) throws SQLException{
 
-        try (Connection connection = GetDBConnection.getInstance().getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+        try (Connection connection = GetDBConnection.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
+
             preparedStatement.setString(1, athlete.getRank());
             preparedStatement.setString(2, athlete.getMark());
             preparedStatement.setString(3, athlete.getName());
@@ -75,18 +86,60 @@ public class AthleteDaoImpl implements AthleteDao {
     }
 
     @Override
-    public Athlete selectAthlete(int id){
-    
+    public Athlete selectAthlete(String name){
+        Athlete athlete = null;
+
+        try (Connection connection = GetDBConnection.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ATHLETE_BY_NAME);) {
+
+            preparedStatement.setString(1, name);
+            System.out.println(preparedStatement);
+
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                String rank = rs.getString("rank");
+                String mark = rs.getString("mark");
+                String date = rs.getString("date");
+                String location = rs.getString("location");
+                athlete = new Athlete(rank, mark, name, date, location);
+            }
+        } catch (SQLException e) {
+            printSQLException(e);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return athlete;
     }
 
     @Override
-    public boolean deleteAthlete(int id) throws SQLException{
-
+    public boolean deleteAthlete(String name) throws SQLException{
+        boolean rowDeleted = false;
+        try (Connection connection = GetDBConnection.getInstance().getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_ATHLETE_SQL);) {
+            statement.setString(1, name);
+            rowDeleted = statement.executeUpdate() > 0;
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+        return rowDeleted;
     }
 
     @Override
     public boolean updateAthlete(Athlete athlete) throws SQLException{
+        boolean rowUpdated = false;
+        try (Connection connection = GetDBConnection.getInstance().getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_ATHLETE_SQL);) {
+            statement.setString(1, athlete.getRank());
+            statement.setString(2, athlete.getMark());
+            statement.setString(3, athlete.getDate());
+            statement.setString(4, athlete.getLocation());
 
+            rowUpdated = statement.executeUpdate() > 0;
+        }catch (SQLException e){
+            printSQLException(e);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return rowUpdated;
     }
 
     private void printSQLException(SQLException ex) {

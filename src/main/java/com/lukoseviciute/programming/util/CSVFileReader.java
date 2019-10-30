@@ -33,7 +33,7 @@ public class CSVFileReader implements FileReaderI{
             //creates an array of Athlete objects storing CSV data
             while ((currLine = csvReader.readLine()) != null) {
                 String[] recordInfo = currLine.split(",");
-                csvAthleteList.add(new Athlete((Integer.parseInt(recordInfo[0])), recordInfo[1], recordInfo[2], recordInfo[3], recordInfo[4]));
+                csvAthleteList.add(new Athlete(recordInfo[0], recordInfo[1], recordInfo[2], recordInfo[3], recordInfo[4]));
             }
 
             csvReader.close();
