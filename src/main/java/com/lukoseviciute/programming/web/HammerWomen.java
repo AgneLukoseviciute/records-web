@@ -1,6 +1,7 @@
 package com.lukoseviciute.programming.web;
 
 import com.lukoseviciute.programming.dao.AthleteDao;
+import com.lukoseviciute.programming.dao.AthleteDaoImpl;
 import com.lukoseviciute.programming.models.Athlete;
 
 import javax.servlet.RequestDispatcher;
@@ -16,7 +17,11 @@ import java.util.List;
 @WebServlet(name = "HammerWomen")
 public class HammerWomen extends HttpServlet {
 
-    private AthleteDao athleteDao;
+    private AthleteDaoImpl athleteDao;
+
+    public void init() {
+        athleteDao = new AthleteDaoImpl();
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);

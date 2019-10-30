@@ -23,5 +23,15 @@
         <url-pattern>/dbrecords</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>HammerWomen</servlet-name>
+        <servlet-class>com.lukoseviciute.programming.web.HammerWomen</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HammerWomen</servlet-name>
+        <url-pattern>/athlete-list</url-pattern>
+    </servlet-mapping>
+
 
 </web-app>
