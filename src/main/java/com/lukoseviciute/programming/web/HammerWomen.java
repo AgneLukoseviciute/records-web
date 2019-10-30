@@ -48,7 +48,7 @@ public class HammerWomen extends HttpServlet {
                     updateUser(request, response);
                     break;
                 default:
-                    listUser(request, response);
+                    listAthlete(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -56,7 +56,7 @@ public class HammerWomen extends HttpServlet {
         }
     }
 
-    private void listUser(HttpServletRequest request, HttpServletResponse response)
+    private void listAthlete(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         List<Athlete> listAthlete = athleteDao.getAllAthletes();
         request.setAttribute("listAthlete", listAthlete);
