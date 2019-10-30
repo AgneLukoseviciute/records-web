@@ -1,7 +1,7 @@
 package com.lukoseviciute.programming.web;
 
 import com.lukoseviciute.programming.models.Athlete;
-import com.lukoseviciute.programming.util.AthleteDaoImpl;
+import com.lukoseviciute.programming.dao.AthleteDaoImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

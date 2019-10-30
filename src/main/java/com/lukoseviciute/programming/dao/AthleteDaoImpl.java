@@ -1,6 +1,7 @@
-package com.lukoseviciute.programming.util;
+package com.lukoseviciute.programming.dao;
 
 import com.lukoseviciute.programming.models.Athlete;
+import com.lukoseviciute.programming.util.GetDBConnection;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -10,8 +11,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-
-import static java.util.logging.Level.INFO;
 
 public class AthleteDaoImpl implements AthleteDao {
 
@@ -42,8 +41,6 @@ public class AthleteDaoImpl implements AthleteDao {
             int rank = resultSet.getInt(2);
             String mark = resultSet.getString(3);
             String name = resultSet.getString("athlete_name");
-          //  logger.log(INFO, "athlete_name: " + name) ;
-
             String date = resultSet.getString(5);
             String location = resultSet.getString(6);
 

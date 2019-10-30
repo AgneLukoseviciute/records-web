@@ -1,4 +1,4 @@
-package com.lukoseviciute.programming.util;
+package com.lukoseviciute.programming.dao;
 
 import com.lukoseviciute.programming.models.Athlete;
 

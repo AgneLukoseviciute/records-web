@@ -1,5 +1,6 @@
 package com.lukoseviciute.programming.util;
 
+import com.lukoseviciute.programming.dao.AthleteDaoImpl;
 import com.lukoseviciute.programming.models.Athlete;
 import com.lukoseviciute.programming.models.Mismatch;
 
