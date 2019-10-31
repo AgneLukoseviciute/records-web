@@ -1,6 +1,5 @@
 package com.lukoseviciute.programming.web;
 
-import com.lukoseviciute.programming.dao.AthleteDao;
 import com.lukoseviciute.programming.dao.AthleteDaoImpl;
 import com.lukoseviciute.programming.models.Athlete;
 

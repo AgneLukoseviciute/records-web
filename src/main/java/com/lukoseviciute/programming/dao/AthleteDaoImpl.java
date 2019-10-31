@@ -13,15 +13,15 @@ public class AthleteDaoImpl implements AthleteDao {
 
     private static Logger logger = Logger.getLogger(AthleteDaoImpl.class.getName());
 
-    private static final String INSERT_USERS_SQL = "INSERT INTO athletes1.hammer_women " +
+    private static final String INSERT_USERS_SQL = "INSERT INTO hammer_women " +
         "(rank, mark, athlete_name, date, location) VALUES (?, ?, ?, ?, ?);";
 
     private static final String SELECT_ATHLETE_BY_NAME = "select rank, mark, date, location " +
-            "from athletes1.hammer_women where athlete_name =?";
+            "from hammer_women where athlete_name =?";
 
-    private static final String SELECT_ALL_ATHLETES = "select * from athletes1.hammer_women";
-    private static final String DELETE_ATHLETE_SQL = "delete from athletes1.hammer_women where athlete_name = ?;";
-    private static final String UPDATE_ATHLETE_SQL = "update athletes1.hammer_women " +
+    private static final String SELECT_ALL_ATHLETES = "select * from hammer_women";
+    private static final String DELETE_ATHLETE_SQL = "delete from hammer_women where athlete_name = ?;";
+    private static final String UPDATE_ATHLETE_SQL = "update hammer_women " +
             "set rank = ?, mark = ?, date = ?, location = ? where athlete_name = ?;";
 
 
@@ -49,11 +49,11 @@ public class AthleteDaoImpl implements AthleteDao {
         List<Athlete> athletes = new ArrayList<>();
 
         while (resultSet.next()){
-            String rank = resultSet.getString(2);
-            String mark = resultSet.getString(3);
+            String rank = resultSet.getString("rank");
+            String mark = resultSet.getString("mark");
             String name = resultSet.getString("athlete_name");
-            String date = resultSet.getString(5);
-            String location = resultSet.getString(6);
+            String date = resultSet.getString("date");
+            String location = resultSet.getString("location");
 
             athletes.add(new Athlete(rank, mark, name, date, location));
         }
