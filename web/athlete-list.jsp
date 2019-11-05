@@ -16,9 +16,9 @@
 <body>
     <h1 style="text-align: center">Athlete Management</h1>
     <h2 style="text-align: center">
-        <a href="new">Add New Athlete</a>
+        <a href="athlete-form.jsp">Add New Athlete</a>
         &nbsp;&nbsp;&nbsp;
-        <a href="list">List All Athletes</a>
+        <a href="athlete-list">List All Athletes</a>
 
     </h2>
 <div align="center">
