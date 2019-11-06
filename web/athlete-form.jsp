@@ -35,17 +35,25 @@
                     <input type="hidden" name="name" value="<c:out value='${athlete.name}' />" />
                 </c:if>
                 <tr>
+                    <th>Athlete Name: </th>
+                    <td>
+                        <input type="text" name="name" size="45"
+                               value="<c:out value='${athlete.name}' />"
+                        />
+                    </td>
+                </tr>
+                <tr>
                 <th>Athlete Rank: </th>
                 <td>
-                    <input type="text" name="name" size="45"
+                    <input type="text" name="rank" size="45"
                            value="<c:out value='${athlete.rank}' />"
                     />
                 </td>
-            </tr>
+                </tr>
                 <tr>
                     <th>Mark: </th>
                     <td>
-                        <input type="text" name="email" size="45"
+                        <input type="text" name="mark" size="45"
                                value="<c:out value='${user.mark}' />"
                         />
                     </td>
@@ -53,7 +61,7 @@
                 <tr>
                     <th>Date: </th>
                     <td>
-                        <input type="text" name="country" size="15"
+                        <input type="text" name="date" size="15"
                                value="<c:out value='${user.date}' />"
                         />
                     </td>
@@ -61,7 +69,7 @@
                 <tr>
                     <th>Location: </th>
                     <td>
-                        <input type="text" name="name" size="45"
+                        <input type="text" name="location" size="45"
                                value="<c:out value='${athlete.location}' />"
                         />
                     </td>
