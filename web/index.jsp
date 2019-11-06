@@ -23,6 +23,9 @@
 <form action = "/records_web_war_exploded/dbrecords" method = "post">
   <input type ="submit" style="color:green;" value = "DB records" >
 </form>
+<form action = "/records_web_war_exploded/athlete-list" method = "post">
+  <input type ="submit" style="color:green;" value = "See Athlete List" >
+</form>
 </body>
 </html>
 
