@@ -35,19 +35,19 @@ public class HammerWomen extends HttpServlet {
                     showNewForm(request, response);
                     break;
                 case "/insert":
-                    insertUser(request, response);
+                    insertAthlete(request, response);
                     break;
                 case "/delete":
-                    deleteUser(request, response);
+                    deleteAthlete(request, response);
                     break;
                 case "/edit":
                     showEditForm(request, response);
                     break;
                 case "/update":
-                    updateUser(request, response);
+                    updateAthlete(request, response);
                     break;
                 default:
-                    listAthlete(request, response);
+                    listAthletes(request, response);
                     break;
             }
         } catch (SQLException ex) {
@@ -55,7 +55,7 @@ public class HammerWomen extends HttpServlet {
         }
     }
 
-    private void listAthlete(HttpServletRequest request, HttpServletResponse response)
+    private void listAthletes(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         List<Athlete> listAthlete = athleteDao.getAllAthletes();
         request.setAttribute("listAthlete", listAthlete);
@@ -72,14 +72,14 @@ public class HammerWomen extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         String name = request.getParameter("name");
-        Athlete existingUser = athleteDao.selectAthlete(name);
+        Athlete existingAthlete = athleteDao.selectAthlete(name);
         RequestDispatcher dispatcher = request.getRequestDispatcher("athlete-form.jsp");
-        request.setAttribute("athlete", existingUser);
+        request.setAttribute("athlete", existingAthlete);
         dispatcher.forward(request, response);
 
     }
 
-    private void insertUser(HttpServletRequest request, HttpServletResponse response)
+    private void insertAthlete(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         String rank = request.getParameter("rank");
         String mark = request.getParameter("mark");
@@ -91,7 +91,7 @@ public class HammerWomen extends HttpServlet {
         response.sendRedirect("list");
     }
 
-    private void updateUser(HttpServletRequest request, HttpServletResponse response)
+    private void updateAthlete(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         String rank = request.getParameter("rank");
         String mark = request.getParameter("mark");
@@ -104,7 +104,7 @@ public class HammerWomen extends HttpServlet {
         response.sendRedirect("list");
     }
 
-    private void deleteUser(HttpServletRequest request, HttpServletResponse response)
+    private void deleteAthlete(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         String name = request.getParameter("name");
         athleteDao.deleteAthlete(name);

@@ -39,9 +39,9 @@
                 <td><c:out value="${athlete.date}" /></td>
                 <td><c:out value="${athlete.location}" /></td>
                 <td>
-                    <a href="edit?id=<c:out value='${athlete.name}' />">Edit</a>
+                    <a href="edit?name=<c:out value='${athlete.name}' />">Edit</a>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="delete?id=<c:out value='${athlete.name}' />">Delete</a>
+                    <a href="delete?name=<c:out value='${athlete.name}' />">Delete</a>
                 </td>
             </tr>
         </c:forEach>
