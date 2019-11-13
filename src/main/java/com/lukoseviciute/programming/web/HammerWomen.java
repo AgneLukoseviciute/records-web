@@ -83,7 +83,7 @@ public class HammerWomen extends HttpServlet {
             throws SQLException, IOException {
         String rank = request.getParameter("rank");
         String mark = request.getParameter("mark");
-        String name = request.getParameter("athlete_name");
+        String name = request.getParameter("name");
         String date = request.getParameter("date");
         String location = request.getParameter("location");
         Athlete newAthlete = new Athlete(rank, mark, name, date, location);
@@ -95,7 +95,7 @@ public class HammerWomen extends HttpServlet {
             throws SQLException, IOException {
         String rank = request.getParameter("rank");
         String mark = request.getParameter("mark");
-        String name = request.getParameter("athlete_name");
+        String name = request.getParameter("name");
         String date = request.getParameter("date");
         String location = request.getParameter("location");
 

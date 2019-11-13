@@ -49,11 +49,11 @@ public class AthleteDaoImpl implements AthleteDao {
         List<Athlete> athletes = new ArrayList<>();
 
         while (resultSet.next()){
-            String rank = resultSet.getString("rank");
-            String mark = resultSet.getString("mark");
-            String name = resultSet.getString("athlete_name");
-            String date = resultSet.getString("date");
-            String location = resultSet.getString("location");
+            String rank = resultSet.getString(2);
+            String mark = resultSet.getString(3);
+            String name = resultSet.getString(4);
+            String date = resultSet.getString(5);
+            String location = resultSet.getString(6);
 
             athletes.add(new Athlete(rank, mark, name, date, location));
         }
@@ -98,10 +98,10 @@ public class AthleteDaoImpl implements AthleteDao {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                String rank = rs.getString("rank");
-                String mark = rs.getString("mark");
-                String date = rs.getString("date");
-                String location = rs.getString("location");
+                String rank = rs.getString(2);
+                String mark = rs.getString(3);
+                String date = rs.getString(5);
+                String location = rs.getString(6);
                 athlete = new Athlete(rank, mark, name, date, location);
             }
         } catch (SQLException e) {

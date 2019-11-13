@@ -5,12 +5,12 @@ CREATE DATABASE athletes1;
 CREATE TABLE `hammer_women` (
     `athlete_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
     `rank` int(11) NOT NULL,
-    `mark` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '',
+    `mark` varchar(30) NOT NULL DEFAULT '',
     `athlete_name` varchar(100) NOT NULL DEFAULT '',
     `date` varchar(20) NOT NULL DEFAULT '',
     `location` varchar(40) NOT NULL DEFAULT '',
     PRIMARY KEY (`athlete_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 /*Data for the table `hammer_women` */
 
