@@ -88,7 +88,7 @@ public class HammerWomen extends HttpServlet {
         String location = request.getParameter("location");
         Athlete newAthlete = new Athlete(rank, mark, name, date, location);
         athleteDao.insertAthlete(newAthlete);
-        response.sendRedirect("list");
+        response.sendRedirect("athlete-list");
     }
 
     private void updateAthlete(HttpServletRequest request, HttpServletResponse response)
@@ -101,14 +101,14 @@ public class HammerWomen extends HttpServlet {
 
         Athlete athlete = new Athlete(rank, mark, name, date, location);
         athleteDao.updateAthlete(athlete);
-        response.sendRedirect("list");
+        response.sendRedirect("athlete-list");
     }
 
     private void deleteAthlete(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         String name = request.getParameter("name");
         athleteDao.deleteAthlete(name);
-        response.sendRedirect("list");
+        response.sendRedirect("athlete-list");
 
     }
 

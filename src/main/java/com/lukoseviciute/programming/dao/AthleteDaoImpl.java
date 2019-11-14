@@ -98,10 +98,10 @@ public class AthleteDaoImpl implements AthleteDao {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                String rank = rs.getString(2);
-                String mark = rs.getString(3);
-                String date = rs.getString(5);
-                String location = rs.getString(6);
+                String rank = rs.getString(1);
+                String mark = rs.getString(2);
+                String date = rs.getString(3);
+                String location = rs.getString(4);
                 athlete = new Athlete(rank, mark, name, date, location);
             }
         } catch (SQLException e) {

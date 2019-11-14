@@ -33,5 +33,26 @@
         <url-pattern>/athlete-list</url-pattern>
     </servlet-mapping>
 
+    <servlet-mapping>
+        <servlet-name>HammerWomen</servlet-name>
+        <url-pattern>/insert</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>HammerWomen</servlet-name>
+        <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet-mapping>
+        <servlet-name>HammerWomen</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
 
 </web-app>
