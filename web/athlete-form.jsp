@@ -54,7 +54,7 @@
                     <th>Mark: </th>
                     <td>
                         <input type="text" name="mark" size="45"
-                               value="<c:out value='${user.mark}' />"
+                               value="<c:out value='${athlete.mark}' />"
                         />
                     </td>
                 </tr>
@@ -62,7 +62,7 @@
                     <th>Date: </th>
                     <td>
                         <input type="text" name="date" size="15"
-                               value="<c:out value='${user.date}' />"
+                               value="<c:out value='${athlete.date}' />"
                         />
                     </td>
                 </tr>
