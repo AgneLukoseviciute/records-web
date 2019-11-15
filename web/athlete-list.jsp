@@ -40,7 +40,6 @@
                 <td><c:out value="${athlete.location}" /></td>
                 <td>
                     <a href="edit?name=<c:out value='${athlete.name}' />">Edit</a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="delete?name=<c:out value='${athlete.name}' />">Delete</a>
                 </td>
             </tr>
