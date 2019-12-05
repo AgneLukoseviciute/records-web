@@ -45,7 +45,7 @@
                 <tr>
                 <th>Athlete Rank: </th>
                 <td>
-                    <input type="text" name="rank" size="45"
+                    <input type="number" name="rank" size="45"
                            value="<c:out value='${athlete.rank}' />"
                     />
                 </td>

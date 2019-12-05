@@ -13,16 +13,13 @@ public class AthleteDaoImpl implements AthleteDao {
 
     private static Logger logger = Logger.getLogger(AthleteDaoImpl.class.getName());
 
-    private static final String INSERT_USERS_SQL = "INSERT INTO hammer_women " +
-        "(rank, mark, athlete_name, date, location) VALUES (?, ?, ?, ?, ?);";
+    private static final String INSERT_USERS_SQL = "INSERT INTO hammer_women (rank, mark, athlete_name, date, location) VALUES (?, ?, ?, ?, ?)";
 
-    private static final String SELECT_ATHLETE_BY_NAME = "select rank, mark, date, location " +
-            "from hammer_women where athlete_name =?";
+    private static final String SELECT_ATHLETE_BY_NAME = "select rank, mark, date, location from hammer_women where athlete_name = ?";
 
     private static final String SELECT_ALL_ATHLETES = "select * from hammer_women";
-    private static final String DELETE_ATHLETE_SQL = "delete from hammer_women where athlete_name = ?;";
-    private static final String UPDATE_ATHLETE_SQL = "update hammer_women " +
-            "set rank = ?, mark = ?, date = ?, location = ? where athlete_name = ?;";
+    private static final String DELETE_ATHLETE_SQL = "delete from hammer_women where athlete_name = ?";
+    private static final String UPDATE_ATHLETE_SQL = "update hammer_women set rank = ?, mark = ?, date = ?, location = ? where athlete_name = ?";
 
 
     List<Athlete> athletes;
@@ -49,7 +46,7 @@ public class AthleteDaoImpl implements AthleteDao {
         List<Athlete> athletes = new ArrayList<>();
 
         while (resultSet.next()){
-            String rank = resultSet.getString(2);
+            int rank = resultSet.getInt(2);
             String mark = resultSet.getString(3);
             String name = resultSet.getString(4);
             String date = resultSet.getString(5);
@@ -70,7 +67,7 @@ public class AthleteDaoImpl implements AthleteDao {
         try (Connection connection = GetDBConnection.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USERS_SQL)) {
 
-            preparedStatement.setString(1, athlete.getRank());
+            preparedStatement.setInt(1, athlete.getRank());
             preparedStatement.setString(2, athlete.getMark());
             preparedStatement.setString(3, athlete.getName());
             preparedStatement.setString(4, athlete.getDate());
@@ -98,7 +95,7 @@ public class AthleteDaoImpl implements AthleteDao {
             ResultSet rs = preparedStatement.executeQuery();
 
             while (rs.next()) {
-                String rank = rs.getString(1);
+                int rank = rs.getInt(1);
                 String mark = rs.getString(2);
                 String date = rs.getString(3);
                 String location = rs.getString(4);
@@ -128,7 +125,7 @@ public class AthleteDaoImpl implements AthleteDao {
     public boolean updateAthlete(Athlete athlete) throws SQLException{
         boolean rowUpdated = false;
         try (Connection connection = GetDBConnection.getInstance().getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_ATHLETE_SQL);) {
-            statement.setString(1, athlete.getRank());
+            statement.setInt(1, athlete.getRank());
             statement.setString(2, athlete.getMark());
             statement.setString(3, athlete.getDate());
             statement.setString(4, athlete.getLocation());

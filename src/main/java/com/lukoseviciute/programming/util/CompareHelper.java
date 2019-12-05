@@ -49,7 +49,7 @@ public abstract class CompareHelper {
 
         if (!checkRank(csvAthlete, otherAthlete)){
             diffs.add(new Mismatch
-                    (csvAthlete.getName(), "Rank", csvAthlete.getRank(), otherAthlete.getRank(), checkedFileType));
+                    (csvAthlete.getName(), "Rank", String.valueOf(csvAthlete.getRank()), String.valueOf(otherAthlete.getRank()), checkedFileType));
         }
         if (!checkMark(csvAthlete, otherAthlete)){
             diffs.add(new Mismatch

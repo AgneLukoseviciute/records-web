@@ -11,7 +11,7 @@ public class Athlete {
 
     }
 
-    public Athlete(String rank, String mark, String name, String date, String location) {
+    public Athlete(int rank, String mark, String name, String date, String location) {
         this.rank = rank;
         this.mark = mark;
         this.name = name;
@@ -35,7 +35,7 @@ public class Athlete {
     @SerializedName("Rank")
     @Expose
     @XmlElement(name = "Rank")
-    private String rank;
+    private int rank;
     @SerializedName("Mark")
     @Expose
     @XmlElement(name = "Mark")
@@ -53,7 +53,7 @@ public class Athlete {
     @XmlElement(name = "Location")
     private String location;
 
-    public String getRank() {
+    public int getRank() {
         return rank;
     }
 

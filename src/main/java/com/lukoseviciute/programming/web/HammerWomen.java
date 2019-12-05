@@ -79,9 +79,17 @@ public class HammerWomen extends HttpServlet {
 
     }
 
+    private void deleteAthlete(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException {
+        String name = request.getParameter("name");
+        athleteDao.deleteAthlete(name);
+        response.sendRedirect("athlete-list");
+
+    }
+
     private void insertAthlete(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-        String rank = request.getParameter("rank");
+        int rank = Integer.parseInt(request.getParameter("rank"));
         String mark = request.getParameter("mark");
         String name = request.getParameter("name");
         String date = request.getParameter("date");
@@ -93,7 +101,7 @@ public class HammerWomen extends HttpServlet {
 
     private void updateAthlete(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
-        String rank = request.getParameter("rank");
+        int rank = Integer.parseInt(request.getParameter("rank"));
         String mark = request.getParameter("mark");
         String name = request.getParameter("name");
         String date = request.getParameter("date");
@@ -104,13 +112,7 @@ public class HammerWomen extends HttpServlet {
         response.sendRedirect("athlete-list");
     }
 
-    private void deleteAthlete(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
-        String name = request.getParameter("name");
-        athleteDao.deleteAthlete(name);
-        response.sendRedirect("athlete-list");
 
-    }
 
 
 }
